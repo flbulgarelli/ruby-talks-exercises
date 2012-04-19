@@ -210,6 +210,12 @@ etc...
 Hacer los cambios necesarios para que todos estos requests sean logeados conforme a la reglamentación vigente. 
 
 
+## URLEncoded
+
+Hacer lo necesario para que todos los objetos, incluso los ya provistos por Ruby u otras bibliotecas, entiendan el mensaje ```to_base64```, que debe devolver el mismo resultado que ```to_s```, pero encodeado en Base64
+
+
+
 -----
 ---
 string interpolation
