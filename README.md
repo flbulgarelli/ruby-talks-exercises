@@ -169,7 +169,45 @@ OpenStruct no soporta ningun otro compartimiento además de estos dos (ej, no en
 ## Validaciones
 
 a. Implementar un mecanismo similar a ```attr_accessor```, llamado ```attr_check_not_null```, que genere los getters y setters, pero además, valide en el setter que el argumento es no nulo.
+
 b. Generalizar la solucón a ```attr_check```, que tome otro argumento que sea la condición a validar en el setter
+
+## Distribuidores de Cerveza
+
+OpenBeer es un protocolo abierto y ficticio para la distribución de cerveza, implementado por varias conocidas cervezerías,  y también, por algunos cerveceros caseros. El protocolo define a una BeerDistributor como un objeto que entiende al menos un mensaje de la forma:
+
+```ruby
+submit_beer_request(beer_request, callback)
+```
+
+El beer request es un hash con la cantidad de botellas, la direccion, y otros detalles que no nos interesan por ahora.
+
+Como los pedidos son asincronicos, el callback es un bloque que será evaluado cuando el cargamento esté listo para ser enviado, al cual se le pasarán un objeto que sabe cobrar y entiende mensaje de la siguiente forma:
+
+```ruby
+pay_for_beer(payment)
+```
+
+Si el pago no se efectua, por la cantidad correcta, la compra se cancela.
+
+Se pide: 
+
+a. implementar un comprador de cerveza compulsivo, que cada vez que cobra una cierta suma de dinero, compra cerveza hasta que se agoten sus ahorros.     
+
+b. Implementar un test unitario. Mockear al BeerDistributor. 
+
+c. Por una disposicion legal, todos los compradores de cerveza de ahora en más tienen que loguear el ```beer_request``` cada vez que hagan un ```submit_beer_request```. Resolverlo de forma transparente para los compradores (ej: no hay que modificar el codigo del comprador compulsivo)
+
+d. OpenBeer 2.0 agrega soporte para la distribucion de cervezas de distintos tipos, picadas, pancitos y demases. Esta nueva version define 35 métodos nuevos, de la forma:
+
+```ruby
+submit_picada_request(picada_request, callback)
+submit_bock_beer_request(bock_beer_request, callback)
+```
+
+etc...
+
+Hacer los cambios necesarios para que todos estos requests sean logeados conforme a la reglamentación vigente. 
 
 
 -----
@@ -178,37 +216,6 @@ string interpolation
 -------------------
 (OVERRIDE send)
 Por convencion, ...
-
-( send + method missing)
-OpenBeer es un protocolo abierto (y ficticio :P) para la distribución de cerveza, implementado por varias conocidas cervezerías,  y también, por algunos cerveceros caseros. El protocolo define a una BeerDistributor como un objeto que entiende al menos un mensaje de la forma:
-
-submit_beer_request(beer_request, callback)
-
-El beer request es un hash con la cantidad de botellas, la direccion, y otros detalles que no nos interesan por ahora.
-
-Como los pedidos son asincronicos, el callback es un bloque que será evaluado cuando el cargamento esté listo para ser enviado, al cual se le pasarán un objeto que sabe cobrar y entiende mensaje de la siguiente forma:
-
-pay_for_beer(payment)
-
-Si el pago no se efectua, por la cantidad correcta, la compra se cancela.
-
-Se pide: 
-a. implementar un comprador de cerveza compulsivo, que cada vez que cobra una cierta suma de dinero, compra cerveza hasta que se agoten sus ahorros.     
-b. Implementar un test unitario. Mockear al BeerDistributor. 
-c. Por una disposicion legal, todos los compradores de cerveza de ahora en más tienen que loguear el beer_request cada vez que hagan un submit_beer_request. Resolverlo de forma transparente para los compradores (ej: no hay que modificar el codigo del comprador compulsivo)
-d. OpenBeer 2.0 agrega soporte para la distribucion de cervezas de distintos tipos, picadas, pancitos y demases. Esta nueva version define 35 métodos nuevos, de la forma:
-
-submit_picada_request(picada_request, callback)
-submit_bock_beer_request(bock_beer_request, callback)
-
-etc...
-
-Hacer los cambios necesarios para que todos estos requests sean logeados conforme a la reglamentación vigente. 
-
-------------------
-open classes + map
-
-
 
 
 ----------
@@ -220,56 +227,7 @@ Desarrollar un Mixin Base64, tal que siempre que
 
 --> cosas con strings 
     --> interpolacion
-   --> strings "grandes"
-
-
-Lesson 3: Collections & Bloques
- - bloques ({} y do .. end)
- - Que es un bloque?
-   - llamar con bloque  
-   - recibir un bloque
- - proc y lambda
- - Literales de lista y mapa
- - Iteratores de lista y mapa
-  
-Lesson 4: Modules
-
- - Definir un modulo
- - Modulo como namespace
- - Modulo como mixin
- - Mixins típicos de ruby
-
-Lesson 5: Sum Up Example
- - Crear Ejemplo
- - Mostrar RSpec
-
-Lesson 6: A Disgression on Dynamic Typing  ?
-
-Parte 2:
+   --> strings "clobs"
 
 
 4.send :+, 1
-
-Lesson 7: Everything is an object
- - todo es un objeto
- - las clases son objetos
-   - class instance variables
- - new no es una keyword reservada (instant factories)
- - siempre hay un self
- - scope gates
-
-Lesson 8: Objects are about messaging
- - metodo send
- - method_missing
- - override responds_to
-
-Lesson 9: Classes are Open!
- - Open Clases
-
-Lesson 10: Eigenclasses is only a fancy name
-
-Lesson 10: Metaprograming is just programming
- - define_method
- - instance_eval, class_eval
- - method hooks
-
