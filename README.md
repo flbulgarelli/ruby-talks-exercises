@@ -80,7 +80,7 @@ x
 {:foo => 4}['foo']
 ```
   
-# Arbol Binario
+## Arbol Binario
 
 Se desea modelar un arbol binario, en el que tanto las hojas como nodos contienen un valor. 
 
@@ -104,60 +104,81 @@ d. Crear una especificacion con RSpec para el arbol.
 
 ## Numeros Romanos
 
-Implementar un conversor de numeros arabigos a romanos. Debe funcional al menos hasta el 
+Implementar un conversor de numeros arabigos a romanos. Debe funcional al menos hasta el 4999
 
+## Guía de teléfonos REST
 
 Se desea implementar una guía de teléfonos, que me paremita saber las siguientes cosas:
-  * dado un teléfono, a quien pertence (id, nombre, apellido), la empresa proveedora y su domicilio.
-  * búsqueda reversa: dado un nombre y apellido, obtener el teléfono y la información anterior
-  * saber la cantidad de abonados totales, y por empresa
+ * dado un teléfono, a quien pertence (id, nombre, apellido), la empresa proveedora y su domicilio.
+ * búsqueda reversa: dado un nombre y apellido, obtener el teléfono y la información anterior
+ * saber la cantidad de abonados totales, y por empresa
 
 a. Exponer estas funcionalidad via REST empleando Sinatra
 
 b. Se desea autenticar el API de forma que solo los usuarios registrados puedan acceder a la misma. 
 Agregar autenticacion HTTP básica, y exponer la funcionalidad necesaria para que el usuario pueda actualizar agregar teléfonos (propios) adicionales, y para que se puedan consultar dichos teléfonos para un usuario. 
 
-d. persistir el modelo en una base de datos relacional con data mapper.
+d. Persistir el modelo en una base de datos relacional (ej: sqlite) con Data Mapper.
 
 
-----------------
+## DSL Equipos de Fútbol
 Implementar un DSL para organizar partidos de futbol. El DSL debe contar con construcciones para:
-* definir los equipos y miembros de cada uno (cada miembro del equipo se identifica por un apodo)
-* definir los encuentros (cancha, día, hora, condcion climatica)
-* indicar los resultados de cada encuentro (como salio el partido, las condiciones climaticas, los hechos salientes)
+ * definir los equipos y miembros de cada uno (cada miembro del equipo se identifica por un apodo)
+ * definir los encuentros (cancha, día, hora, condcion climatica)
+ * indicar los resultados de cada encuentro (como salio el partido, las condiciones climaticas, los hechos salientes)
 
 Con estas definiciones cargadas, yo deberia poder interpretar mi lenguaje futbolistico y poder obtener estadísticas, sugerencias, etc (esto está uera del ejercicio, con plantear una estadística simple como porcentaje de partidos ganados por cada equipo alcanza)
 
 Tip: usar la imaginación, el DSL resultante tiene que ser mas que una fluent api, explotar las características de metaprogramación. Es decir, el DSL no se debería ver como:
 
-
+```ruby
 def setup do
   equipo1 = Equipo.new
   equipo1.nombre = '...'
   equipo1.integrantes = [ 'tyny', 'cono', 'guido', ...]
 end
+```
 
 sino mas bien y por dar un ejemplo:
 
+```ruby
 equipo 'equipo1' do
   integrantes :tyny, :cono, :guido 
 
 end
+```
+
+## OpenStruct 
+
+OpenStruct es una clase bastante útil para definir dtos, similar a un Hash, pero con la diferencia de que en lugar de acceder mediante el mensaje [] a los valores, lo hago empleando accessors normales. Ej:
+
+require 'ostruct'
+
+```ruby
+hash = {:foo => 4, :bar => []}
+ostruct = OpenStruct.new( :foo => 4, :bar => [] )
+
+hash[:foo] vs ostruct.foo 
+hash[:baz] = 4 vs ostruct.baz = 4
+```
+
+OpenStruct no soporta ningun otro compartimiento además de estos dos (ej, no entiende los metodos iteradores). Implementar OpenStruct
 
 
+
+## Validaciones
+
+a. Implementar un mecanismo similar a ```attr_accessor```, llamado ```attr_check_not_null```, que genere los getters y setters, pero además, valide en el setter que el argumento es no nulo.
+b. Generalizar la solucón a ```attr_check```, que tome otro argumento que sea la condición a validar en el setter
+
+
+-----
 ---
 string interpolation
 -------------------
 (OVERRIDE send)
 Por convencion, ...
 
-
----
-a. Implementar un mecanismo similar a attr_accessor, llamado attr_check_not_null, que genere los getters y setters, pero además, valide en el setter que el argumento es no nulo.
-b. Generalizar la solucón a attr_check, que tome otro argumento que sea la condición a validar en el setter
-
-
------
 ( send + method missing)
 OpenBeer es un protocolo abierto (y ficticio :P) para la distribución de cerveza, implementado por varias conocidas cervezerías,  y también, por algunos cerveceros caseros. El protocolo define a una BeerDistributor como un objeto que entiende al menos un mensaje de la forma:
 
@@ -188,20 +209,6 @@ Hacer los cambios necesarios para que todos estos requests sean logeados conform
 open classes + map
 
 
----
-OpenStruct es una clase bastante útil para definir dtos, similar a un Hash, pero con la diferencia de que en lugar de acceder mediante el mensaje [] a los valores, lo hago empleando accessors normales. Ej:
-
-require 'ostruct'
-
-
-hash = {:foo => 4, :bar => []}
-ostruct = OpenStruct.new( :foo => 4, :bar => [] )
-
-hash[:foo] vs ostruct.foo 
-hash[:baz] = 4 vs ostruct.baz = 4
-
-
-OpenStruct no soporta ningun otro compartimiento además de estos dos (ej, no entiende los metodos iteradores). Implementar OpenStruct
 
 
 ----------
