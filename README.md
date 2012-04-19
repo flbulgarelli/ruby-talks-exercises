@@ -247,4 +247,10 @@ Hacer lo necesario para que todos los objetos, incluso los ya provistos por Ruby
  * String interpolations
  * eigent classes
  * clobs
+ * http://www.rubyquiz.com/quiz32.html
+ * http://www.rubyquiz.com/quiz8.html
+ * http://www.rubyquiz.com/quiz7.html
+ * http://www.rubyquiz.com/quiz155.html
+ * http://www.rubyquiz.com/quiz9.html
+ * ImplementaR select
  
