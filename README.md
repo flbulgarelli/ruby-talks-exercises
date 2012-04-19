@@ -109,6 +109,18 @@ my_tree.select { |x| x > 5 }
 
 d. Crear una especificacion con RSpec para el arbol. 
 
+## Suma de Mapas
+
+Escribir el código necesario para poder implementar las union de mapas mediante el mensaje +:
+
+Ej:
+
+```ruby
+irb(main):023:0>  {:foo => 4} + {:bar => 6}
+=> {:foo=>4, :bar=>6}
+```
+Tips: explorar la doc de Hash. Hay MUCHA alternativas. Investigar ```alias```.
+
 ## Numeros Romanos
 
 Implementar un conversor de numeros arabigos a romanos. Debe funcional al menos hasta el 4999
