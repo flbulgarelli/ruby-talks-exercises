@@ -3,37 +3,44 @@
 
 ## Expresiones: Cual es valor de las siguientes expresiones?
 
-```ruby
-def foo 
- [4, 5]
-end
-```
-
-```ruby
-def bar(x) 
-  x = 7
-  x
-end
-```
-
-```ruby
-class Bar 
- 4
-end
-```
-
-```ruby
-puts  "hello"
-```
 
 ```ruby
 x = []
 5 if x.empty?
 ```
 
+
+```ruby
+x = 6
+def bar(x) 
+  x = 7
+  x
+end
+bar(6)
+x
+```
+
+```ruby
+def foo 
+ [4, 5]
+end
+```
+
+
+```ruby
+puts  "hello"
+```
+
 ```ruby
 x = 50
 [ (if x >  40; 'foo'; else 'bar'; end), ('foobar' unless x > 30) ]
+```
+
+
+```ruby
+class Bar 
+ 4
+end
 ```
 
 ```ruby
@@ -109,6 +116,7 @@ Implementar un conversor de numeros arabigos a romanos. Debe funcional al menos 
 ## Guía de teléfonos REST
 
 Se desea implementar una guía de teléfonos, que me paremita saber las siguientes cosas:
+
  * dado un teléfono, a quien pertence (id, nombre, apellido), la empresa proveedora y su domicilio.
  * búsqueda reversa: dado un nombre y apellido, obtener el teléfono y la información anterior
  * saber la cantidad de abonados totales, y por empresa
