@@ -222,26 +222,17 @@ Hacer los cambios necesarios para que todos estos requests sean logeados conform
 
 Hacer lo necesario para que todos los objetos, incluso los ya provistos por Ruby u otras bibliotecas, entiendan el mensaje ```to_base64```, que debe devolver el mismo resultado que ```to_s```, pero encodeado en Base64
 
+## Basic Metapogramming
+
+ * [http://ruby-metaprogramming.rubylearning.com/html/Exercise_4.html] Nota: p es un comando de irb. Que hace?
+ * [http://ruby-metaprogramming.rubylearning.com/html/Exercise_2.html]
+ * [http://ruby-metaprogramming.rubylearning.com/html/Exercise_1.html](Desafío del café con leche)
 
 
------
----
-string interpolation
--------------------
-(OVERRIDE send)
-Por convencion, ...
+## TODOs
 
-
-----------
-(Implementar mixin + redefinir send)
-
-Desarrollar un Mixin Base64, tal que siempre que 
-
---> cosas con excepciones
-
---> cosas con strings 
-    --> interpolacion
-   --> strings "clobs"
-
-
-4.send :+, 1
+ * Operator overloading
+ * String interpolations
+ * eigent classes
+ * clobs
+ 
