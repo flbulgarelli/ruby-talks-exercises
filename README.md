@@ -1,5 +1,14 @@
 # Ejercicios
 
+## Introducción
+
+Estos son algunos ejercicios de Ruby. Los temas que tratan son
+
+ * Expresiones: evaluación de expresiones en general
+ * Select: Colecciones, bloques, RSpec
+ * Árbol binario: Modelado, Bloques, Mixin Enumerable, Enumerator, RSpec
+ * 
+
 
 ## Expresiones: Cual es valor de las siguientes expresiones?
 
@@ -108,13 +117,23 @@ y que esto devuelva el string,  ```"[5, 1, 200, 45]"```
 
 b. Implementar un metodo para ejecutar un bloque por cada elemento del arbol. Refactorizar ```to_s``` para que lo use. 
 
-c. Refactorizar el código para usarlo como una coleccion estandar de Ruby. Ejemplo:
+c. Refactorizar el código para usarlo como una coleccion estandar de Ruby (ver Enumerable). Ejemplo:
 
 ```ruby
 my_tree.select { |x| x > 5 }
 ```
 
-d. Crear una especificacion con RSpec para el arbol. 
+d. Implementar ahora un método para recorrido primero en amplitud. Sin romper el código anterior, mostrar como se podría utilizar este método para a partir del mismo obtener obtener los métodos de Enumerable. (ver Enumerator)
+
+e. Implementar lo necesario para que yo pueda hacer lo siguiente con los métodos de Enumerable (por ejemplo, select):
+
+```ruby
+my_tree dp_select { ..condicion... } #como ya lo habiamos hecho, select empleando deep first
+my_tree select { ..condicion..  } #equivalente a dp_select
+my_tree bf_select { ...condicion ... } #igual select, pero empleando breadth first
+```
+
+f. Crear una especificacion con RSpec para el arbol. 
 
 ## Suma de Mapas
 
@@ -131,6 +150,31 @@ Tips: explorar la doc de Hash. Hay MUCHA alternativas. Investigar ```alias```.
 ## Numeros Romanos
 
 Implementar un conversor de numeros arabigos a romanos. Debe funcional al menos hasta el 4999
+
+## Variables, Variables, Variables: Que imprime esto?
+
+```ruby
+class A
+ @@var = 1
+
+ class << self
+   attr_reader :var
+ end
+end
+class B < A
+@@var = 2
+
+end
+class C < A
+@@var = 3
+
+end
+
+puts A.var
+puts B.var
+puts C.var
+```
+
 
 ## Guía de teléfonos REST
 
@@ -250,7 +294,6 @@ Hacer lo necesario para que todos los objetos, incluso los ya provistos por Ruby
 
 ## TODOs
 
- * Operator overloading
  * String interpolations
  * eigent classes
  * clobs
