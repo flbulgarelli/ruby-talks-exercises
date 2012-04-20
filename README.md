@@ -5,6 +5,7 @@
 Estos son algunos ejercicios de Ruby. Los temas que tratan son
 
  * Expresiones: evaluación de expresiones en general
+ * File Path: String Interpolation y Env Variables
  * Arbol Binario: Modelado, Bloques, Mixin Enumerable, Enumerator, RSpec
  * Select: Colecciones, bloques, RSpec
  * Suma de Mapas: OpenClasses, Alias
@@ -13,7 +14,7 @@ Estos son algunos ejercicios de Ruby. Los temas que tratan son
  * Guía de teléfonos REST: Sinatra, DataMapper
  * DSL Equipos de Fútbol: Todo
  * OpenStruct: MethodMissing 
- * Distribuidores de Cerveza: MethodMissing, Send
+ * Distribuidores de Cerveza: MethodMissing, Send, Regexp
  * URLEncoded: OpenClasses
  * Basic Metapogramming: Misc
 
@@ -104,6 +105,12 @@ x
 {:foo => 4}['foo']
 ```
 
+```
+
+## File Path
+
+Definir una función que dado un nombre de archivo, y un directorio relativo al home dir del usuario, devuelva el path absoluto del archivo. No usar concatenación de Strings. 
+
 ## Select 
 
 a. Implementar ```select```: es un mensaje que filtra una colección, devolviendo un ```Array``` con los elementos que cumplen una condición dada.
@@ -140,6 +147,8 @@ my_tree dp_select { ..condicion... } #como ya lo habiamos hecho, select empleand
 my_tree select { ..condicion..  } #equivalente a dp_select
 my_tree bf_select { ...condicion ... } #igual select, pero empleando breadth first
 ```
+
+Tip: Aprovechar para probar regexps. 
 
 f. Crear una especificacion con RSpec para el arbol. 
 
@@ -231,9 +240,9 @@ end
 
 OpenStruct es una clase bastante útil para definir dtos, similar a un Hash, pero con la diferencia de que en lugar de acceder mediante el mensaje [] a los valores, lo hago empleando accessors normales. Ej:
 
+```ruby
 require 'ostruct'
 
-```ruby
 hash = {:foo => 4, :bar => []}
 ostruct = OpenStruct.new( :foo => 4, :bar => [] )
 
@@ -243,7 +252,8 @@ hash[:baz] = 4 vs ostruct.baz = 4
 
 OpenStruct no soporta ningun otro compartimiento además de estos dos (ej, no entiende los metodos iteradores). 
 
-a. Implementar OpenStruct
+a. Implementar ```OpenStruct```
+
 b. Agregar la siguiente mejora de performance: cachear los métodos. 
 
  Tip: La primera vez que se evalua el method missing, agregar un método nuevo. Los envios subsiguientes de ese mensaje no daberían resultar en la evaluacion de method missing. 
@@ -293,6 +303,7 @@ etc...
 
 Hacer los cambios necesarios para que todos estos requests sean logeados conforme a la reglamentación vigente. 
 
+Tip: Usar regexps. 
 
 ## URLEncoded
 
@@ -307,7 +318,6 @@ Hacer lo necesario para que todos los objetos, incluso los ya provistos por Ruby
 
 ## TODOs
 
- * String interpolations
  * eigent classes
  * clobs
  * http://www.rubyquiz.com/quiz32.html
@@ -315,5 +325,5 @@ Hacer lo necesario para que todos los objetos, incluso los ya provistos por Ruby
  * http://www.rubyquiz.com/quiz7.html
  * http://www.rubyquiz.com/quiz155.html
  * http://www.rubyquiz.com/quiz9.html
- * regexp
+
  
