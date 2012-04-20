@@ -6,7 +6,7 @@ Estos son algunos ejercicios de Ruby. Los temas que tratan son
 
  * Expresiones: evaluación de expresiones en general
  * File Path: String Interpolation y Env Variables
- * Arbol Binario: Modelado, Bloques, Mixin Enumerable, Enumerator, RSpec
+ * Arbol Binario: Modelado, Bloques, Mixin Enumerable, Enumerator, RSpec, Regexp
  * Select: Colecciones, bloques, RSpec
  * Suma de Mapas: OpenClasses, Alias
  * Numeros Romanos: Modelado
