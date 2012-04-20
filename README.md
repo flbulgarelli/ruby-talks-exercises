@@ -5,9 +5,17 @@
 Estos son algunos ejercicios de Ruby. Los temas que tratan son
 
  * Expresiones: evaluación de expresiones en general
+ * Arbol Binario: Modelado, Bloques, Mixin Enumerable, Enumerator, RSpec
  * Select: Colecciones, bloques, RSpec
- * Árbol binario: Modelado, Bloques, Mixin Enumerable, Enumerator, RSpec
- * 
+ * Suma de Mapas: OpenClasses
+ * Numeros Romanos: Modelado
+ * Variables, Variables, Variables: Que imprime esto?
+ * Guía de teléfonos REST: Sinatra, DataMapper
+ * DSL Equipos de Fútbol: Todo
+ * OpenStruct: MethodMissing 
+ * Distribuidores de Cerveza: MethodMissing, Send
+ * URLEncoded: OpenClasses
+ * Basic Metapogramming: Misc
 
 
 ## Expresiones: Cual es valor de las siguientes expresiones?
