@@ -86,6 +86,13 @@ x
 ```ruby
 {:foo => 4}['foo']
 ```
+
+## Select 
+
+a. Implementar ```select```: es un mensaje que filtra una colección, devolviendo un ```Array``` con los elementos que cumplen una condición dada.
+
+b. Especificar select mediante RSpec
+
   
 ## Arbol Binario
 
@@ -252,5 +259,5 @@ Hacer lo necesario para que todos los objetos, incluso los ya provistos por Ruby
  * http://www.rubyquiz.com/quiz7.html
  * http://www.rubyquiz.com/quiz155.html
  * http://www.rubyquiz.com/quiz9.html
- * ImplementaR select
+ * regexp
  
