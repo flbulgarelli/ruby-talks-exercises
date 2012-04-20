@@ -7,7 +7,7 @@ Estos son algunos ejercicios de Ruby. Los temas que tratan son
  * Expresiones: evaluación de expresiones en general
  * Arbol Binario: Modelado, Bloques, Mixin Enumerable, Enumerator, RSpec
  * Select: Colecciones, bloques, RSpec
- * Suma de Mapas: OpenClasses
+ * Suma de Mapas: OpenClasses, Alias
  * Numeros Romanos: Modelado
  * Variables, Variables, Variables: Que imprime esto?
  * Guía de teléfonos REST: Sinatra, DataMapper
@@ -241,7 +241,12 @@ hash[:foo] vs ostruct.foo
 hash[:baz] = 4 vs ostruct.baz = 4
 ```
 
-OpenStruct no soporta ningun otro compartimiento además de estos dos (ej, no entiende los metodos iteradores). Implementar OpenStruct
+OpenStruct no soporta ningun otro compartimiento además de estos dos (ej, no entiende los metodos iteradores). 
+
+a. Implementar OpenStruct
+b. Agregar la siguiente mejora de performance: cachear los métodos. 
+
+ Tip: La primera vez que se evalua el method missing, agregar un método nuevo. Los envios subsiguientes de ese mensaje no daberían resultar en la evaluacion de method missing. 
 
 
 
