@@ -141,9 +141,9 @@ d. Implementar ahora un método para recorrido primero en amplitud. Sin romper e
 e. Implementar lo necesario para que yo pueda hacer lo siguiente con los métodos de Enumerable (por ejemplo, select):
 
 ```ruby
-my_tree dp_select { ..condicion... } #como ya lo habiamos hecho, select empleando deep first
-my_tree select { ..condicion..  } #equivalente a dp_select
-my_tree bf_select { ...condicion ... } #igual select, pero empleando breadth first
+my_tree.dp_select { ..condicion... } #como ya lo habiamos hecho, select empleando deep first
+my_tree.select { ..condicion..  } #equivalente a dp_select
+my_tree.bf_select { ...condicion ... } #igual select, pero empleando breadth first
 ```
 
 Tip: Aprovechar para probar regexps. 
