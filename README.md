@@ -105,8 +105,6 @@ x
 {:foo => 4}['foo']
 ```
 
-```
-
 ## File Path
 
 Definir una función que dado un nombre de archivo, y un directorio relativo al home dir del usuario, devuelva el path absoluto del archivo. No usar concatenación de Strings. 
